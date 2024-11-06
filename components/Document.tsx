@@ -2,10 +2,11 @@
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useState, useTransition, useEffect } from "react";
+import { useState, useTransition, useEffect, FormEvent } from "react";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "@/firebase";
 import { useDocumentData } from "react-firebase-hooks/firestore";
+import CollaborativeEditor from "@/components/CollaborativeEditor";
 
 function Document({ id }: { id: string }) {
   const [data, loading, error] = useDocumentData(doc(db, "documents", id));
@@ -29,7 +30,7 @@ function Document({ id }: { id: string }) {
     }
   };
   return (
-    <div>
+    <div className="flex-1 h-full bg-white p-5">
       <div className="flex max-w-6xl mx-auto justify-between pb-5">
         <form className="flex flex-1 space-x-2" onSubmit={updateTitle}>
           {/* Update Title... */}
@@ -48,7 +49,10 @@ function Document({ id }: { id: string }) {
         {/* Avatars */}
       </div>
 
+      <hr className="pb-10" />
+
       {/* Collaborative Editor */}
+      <CollaborativeEditor />
     </div>
   );
 }
