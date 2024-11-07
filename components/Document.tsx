@@ -9,6 +9,8 @@ import { useDocumentData } from "react-firebase-hooks/firestore";
 import CollaborativeEditor from "@/components/CollaborativeEditor";
 import useOwner from "@/lib/useOwner";
 import DeleteDocument from "@/components/DeleteDocument";
+import InviteUser from "@/components/InviteUser";
+import ManageUsers from "@/components/ManageUsers";
 
 function Document({ id }: { id: string }) {
   const [data, loading, error] = useDocumentData(doc(db, "documents", id));
@@ -42,19 +44,21 @@ function Document({ id }: { id: string }) {
             {isUpdating ? "Updating..." : "Update"}
           </Button>
           {/* IF */}
+          {/* isOwner && InviteUser, DeleteDocument */}
           {isOwner && (
             <>
               {/* InviteUser */}
+              <InviteUser />
               {/* DeleteDocument */}
               <DeleteDocument />
             </>
           )}
-          {/* isOwner && InviteUser, DeleteDocument */}
         </form>
       </div>
 
-      <div>
+      <div className="flex max-w-6xl mx-auto justify-between items-center mb-5">
         {/* ManageUsers */}
+        <ManageUsers />
 
         {/* Avatars */}
       </div>

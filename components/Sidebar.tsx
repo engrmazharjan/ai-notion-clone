@@ -96,14 +96,14 @@ function Sidebar() {
             ))}
           </>
         )}
-      </div>
+      {/* </div> */}
 
-      <div className="flex py-4 flex-col space-y-4 md:max-w-36">
+      {/* <div className="flex py-4 flex-col space-y-4 md:max-w-36"> */}
         {/* Shared with Me */}
         {groupedData.editor.length > 0 && (
           <>
             <h2 className="text-gray-500 font-semibold text-sm">
-              Shared with ME
+              Shared with Me
             </h2>
 
             {groupedData.editor.map((doc, index) => (
