@@ -3,6 +3,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "AI Notion Clone",
@@ -29,6 +30,8 @@ export default function RootLayout({
               {children}
             </div>
           </div>
+
+          <Toaster position="top-center" />
         </body>
       </html>
     </ClerkProvider>
