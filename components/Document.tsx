@@ -11,6 +11,7 @@ import useOwner from "@/lib/useOwner";
 import DeleteDocument from "@/components/DeleteDocument";
 import InviteUser from "@/components/InviteUser";
 import ManageUsers from "@/components/ManageUsers";
+import Avatars from "@/components/Avatars";
 
 function Document({ id }: { id: string }) {
   const [data, loading, error] = useDocumentData(doc(db, "documents", id));
@@ -61,6 +62,7 @@ function Document({ id }: { id: string }) {
         <ManageUsers />
 
         {/* Avatars */}
+        <Avatars/>
       </div>
 
       <hr className="pb-10" />

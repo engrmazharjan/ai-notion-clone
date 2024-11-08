@@ -10,6 +10,7 @@ import { BlockNoteView } from "@blocknote/shadcn";
 import { BlockNoteEditor } from "@blocknote/core";
 import { useCreateBlockNote } from "@blocknote/react";
 import stringToColor from "@/lib/stringToColor";
+import TranslateDocument from "@/components/TranslateDocument";
 
 import "@blocknote/core/fonts/inter.css";
 import "@blocknote/shadcn/style.css";
@@ -75,6 +76,7 @@ function CollaborativeEditor() {
     <div className="max-w-6xl mx-auto">
       <div className="flex items-center gap-2 justify-end mb-10">
         {/* TranslationDocument AI */}
+        <TranslateDocument doc={doc}/>
         {/* ChatToDocument AI */}
 
         {/* Dark Mode */}
