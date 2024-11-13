@@ -11,7 +11,7 @@ import { BlockNoteEditor } from "@blocknote/core";
 import { useCreateBlockNote } from "@blocknote/react";
 import stringToColor from "@/lib/stringToColor";
 import TranslateDocument from "@/components/TranslateDocument";
-
+import ChatToDocument from "@/components/ChatToDocument";
 import "@blocknote/core/fonts/inter.css";
 import "@blocknote/shadcn/style.css";
 type CollaborativeEditorProps = {
@@ -76,8 +76,10 @@ function CollaborativeEditor() {
     <div className="max-w-6xl mx-auto">
       <div className="flex items-center gap-2 justify-end mb-10">
         {/* TranslationDocument AI */}
-        <TranslateDocument doc={doc}/>
+        <TranslateDocument doc={doc} />
+
         {/* ChatToDocument AI */}
+        <ChatToDocument doc={doc} />
 
         {/* Dark Mode */}
         <Button className={style} onClick={() => setDarkMode(!darkMode)}>
