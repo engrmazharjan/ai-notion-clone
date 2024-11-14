@@ -27,6 +27,7 @@ function ChatToDocument({ doc }: { doc: Y.Doc }) {
   const handleAskQuestion = async (e: FormEvent) => {
     e.preventDefault();
     setQuestion(input);
+    console.log(process.env.NEXT_PUBLIC_BASE_URL);
 
     startTransition(async () => {
       const documentData = doc.get("document-store").toJSON();
